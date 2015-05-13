@@ -65,3 +65,13 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
 )
+
+RESOURCES = 1 << 3
+PRIVATES = 1 << 4
+RESOURCES_PRIVATES = RESOURCES | PRIVATES
+
+OAUTH_SCOPES = (
+    (RESOURCES, 'resources'),
+    (PRIVATES, 'privates'),
+    (RESOURCES_PRIVATES, 'resources+privates'),
+)
